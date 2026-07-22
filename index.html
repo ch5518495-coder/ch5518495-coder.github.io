@@ -146,6 +146,38 @@ box-shadow:0 0 20px rgba(37,99,235,.7);
 @keyframes float{
 50%{transform:translateY(-12px)}
 }
+  #registrationForm{
+display:flex;
+flex-direction:column;
+gap:18px;
+margin-top:30px;
+}
+
+#registrationForm input,
+#registrationForm select{
+padding:16px;
+border:none;
+border-radius:14px;
+font-size:16px;
+background:rgba(255,255,255,.12);
+color:#fff;
+outline:none;
+border:1px solid rgba(255,255,255,.15);
+backdrop-filter:blur(10px);
+}
+
+#registrationForm input::placeholder{
+color:#dbe7ff;
+}
+
+#registrationForm select option{
+color:#000;
+}
+
+#registrationForm .btn{
+width:100%;
+margin-top:10px;
+  }
 @media(max-width:768px){
 h1{font-size:40px}
 .box{padding:35px}
