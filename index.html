@@ -266,16 +266,55 @@ Start Your Journey
 <button id="top">↑</button>
 
 <script>
-const topBtn=document.getElementById("top");
-window.addEventListener("scroll",()=>{
-topBtn.style.display=window.scrollY>250?"block":"none";
+const topBtn = document.getElementById("top");
+
+window.addEventListener("scroll", () => {
+    topBtn.style.display = window.scrollY > 250 ? "block" : "none";
 });
-topBtn.onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
-document.querySelectorAll(".card").forEach(card=>{
-card.addEventListener("mouseenter",()=>card.style.transform="translateY(-10px) scale(1.02)");
-card.addEventListener("mouseleave",()=>card.style.transform="translateY(0)");
+
+topBtn.onclick = () => window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+});
+
+document.querySelectorAll(".card").forEach(card => {
+    card.addEventListener("mouseenter", () => {
+        card.style.transform = "translateY(-10px) scale(1.02)";
+    });
+
+    card.addEventListener("mouseleave", () => {
+        card.style.transform = "translateY(0)";
+    });
+});
+
+document.getElementById("registrationForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const email = document.getElementById("email").value;
+    const course = document.getElementById("course").value;
+
+    const message =
+`Hello NexaCareer Hub.
+
+My Registration Details
+
+Full Name: ${name}
+Phone: ${phone}
+Email: ${email}
+Course: ${course}
+
+I would like to enroll.`;
+
+    window.open(
+        "https://wa.me/254742050267?text=" +
+        encodeURIComponent(message),
+        "_blank"
+    );
+
 });
 </script>
-
 </body>
 </html>
